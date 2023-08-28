@@ -88,27 +88,7 @@
           </div>
         </div>
       </div>
-      <form class="modal" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">      
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Categories</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>      
-            <!-- Modal body -->
-            <div class="modal-body">
-              <p><b>Category Name</b></p>
-              <input type="text" class="form-control" id="inputPassword3" placeholder="Enter Category Name">
-            </div>      
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">+ Add</button>
-            </div>      
-          </div>
-        </div>
-      </form>
+
       <form class="modal" id="myModalEdit">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -139,87 +119,95 @@
           </li>
           <li class="nav-item nav-category">Category</li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/ui-features/buttons.html">
+            <a class="nav-link" href="../../pages/category/CategoryList.html">
               <i class="menu-icon mdi mdi-view-list"></i>
               <span class="menu-title">Category List</span>
               <!-- <i class="menu-arrow"></i> -->
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/ui-features/dropdowns.html">
+            <a class="nav-link" href="../../pages/category/CategoryAdd.html">
               <i class="menu-icon mdi mdi-plus"></i>
-              <span class="menu-title">Category Add</span>
+              <span class="menu-title">Add Category</span>
               <!-- <i class="menu-arrow"></i> -->
             </a>
           </li>
           <li class="nav-item nav-category">Products</li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/tables/basic-table.html">
+            <a class="nav-link" href="../../pages/products/ProductList.html">
               <i class="menu-icon mdi mdi-view-list"></i>
               <span class="menu-title">Product List</span>
               <!-- <i class="menu-arrow"></i> -->
             </a>
           </li>
-          <li class="nav-item nav-category">Trash</li>
           <li class="nav-item">
-            <a class="nav-link" href="../../pages/samples/login.html">
-              <i class="menu-icon mdi mdi-delete"></i>
-              <span class="menu-title">Trash Category</span>
+            <a class="nav-link" href="../../pages/products/ProductAdd.html">
+              <i class="menu-icon mdi mdi-plus"></i>
+              <span class="menu-title">Add Product</span>
               <!-- <i class="menu-arrow"></i> -->
             </a>
           </li>
-          <!-- <li class="nav-item nav-category">pages</li>
+          <li class="nav-item nav-category">Trash</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-              <i class="menu-icon mdi mdi-account-circle-outline"></i>
-              <span class="menu-title">User Pages</span>
-              <i class="menu-arrow"></i>
+            <a class="nav-link" href="../../pages/trash/TrashData.html">
+              <i class="menu-icon mdi mdi-delete"></i>
+              <span class="menu-title">Trash Data</span>
+              <!-- <i class="menu-arrow"></i> -->
             </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-              </ul>
-            </div>
-          </li> -->
-          <!-- <li class="nav-item nav-category">help</li>
-          <li class="nav-item">
-            <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-              <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li> -->
+          </li>
         </ul>
       </nav>
+      
       <!-- partial -->
       <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body"> 
-                  <div class="d-flex justify-content-between">
-                    <h4 class="card-title">Category List</h4> 
-                    <button class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#myModal">+Add Category</button> 
-                </div>                                     
-                  <div class="table-responsive">
-                    <table class="table table-striped">
-                      <thead id="tabHead">
-                        <tr>
-                          <th>Id</th>
-                          <th>Category Name</th>
-                          <th>Date</th>
-                          <th>Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody id="tabData">
-                    </tbody>
-                    </table>
+          <div class="content-wrapper">
+              <div class="row">
+                  <div class="col-lg-12 grid-margin stretch-card">
+                      <div class="card">
+                          <div class="card-body">
+                              <h4 class="card-title">Category List</h4>
+                              <div class="table-responsive">
+                                  <table class="table table-striped">
+                                      <thead id="tabHead">
+                                          <tr>
+                                              <th>Id</th>
+                                              <th>Category Name</th>
+                                              <th>Date</th>
+                                              <th>Actions</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody id="tabData">
+                                          <!-- ... Table rows ... -->
+                                      </tbody>
+                                  </table>
+                              </div>
+                              <div class="pagination-container" style="margin-top: 10px;">
+                                  <nav aria-label="Page navigation example">
+                                      <ul class="pagination justify-content-center">
+                                          <li class="page-item">
+                                              <a class="page-link" href="#" id="prevPage" aria-label="Previous">
+                                                  <span aria-hidden="true">&laquo;</span>
+                                              </a>
+                                          </li>
+                                          <li class="page-item"><a class="page-link page-number" href="#" data-page="1">1</a></li>
+                                          <li class="page-item"><a class="page-link page-number" href="#" data-page="2">2</a></li>
+                                          <li class="page-item"><a class="page-link page-number" href="#" data-page="3">3</a></li>
+                                          <!-- Add more page links as needed -->
+                                          <li class="page-item">
+                                              <a class="page-link" href="#" id="nxtPage" aria-label="Next">
+                                                  <span aria-hidden="true">&raquo;</span>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </nav>
+                              </div>
+                          </div>
+                      </div>
                   </div>
-                </div>
               </div>
-            </div>
           </div>
-        </div>
+      
+      
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.</span>
@@ -272,36 +260,66 @@
               }
           }
       });
-  }  
+  } 
   $(document).ready(function () {
             loadData();
-            $(document).on('click', '#myModal .btn-primary', function () {
-                var categoryName = $('#inputPassword3').val();                
+            var currentPage = 1;
+
+            loadData(currentPage);
+            $(document).on('click', '.page-number', function () {
+                var page = $(this).data('page');
+                loadData(page);
+            });
+            function loadData(page) {
                 $.ajax({
-                    type: "POST",
-                    url: "https://sandbox.pranavdev.space/gadgets/api/add-category",
-                    data: { name: categoryName },
+                    type: "GET",
+                    url: "https://sandbox.pranavdev.space/gadgets/api/list-all-categories",
+                    data: { page: page },
                     success: function (response) {
                         if (response.status == "success") {
-                            var newCategory = response.data;
+                            var data = response.data;
+                            var tabData = '';
 
-                            var newRow = '<tr>';
-                            newRow += '<td>' + newCategory.id + '</td>';
-                            newRow += '<td>' + newCategory.name + '</td>';
-                            newRow += '<td>' + newCategory.created_at + '</td>';
-                            newRow += '</tr>';
-
-                            $('#tabData').append(newRow);
-                            $('#inputPassword3').val('');
-                            $('#myModal').modal('hide');
-                            loadData();
-                        } else {
-                            console.log(response.message);
+                            for (var i = 0; i < data.length; i++) {
+                                tabData += '<tr>';
+                                  tabData += '<td>' + d[i].id + '</td>';
+                      tabData += '<td>' + data[i].name + '</td>';
+                      tabData += '<td>' + data[i].created_at + '</td>';
+                      tabData += '<td><button class="btn btn-sm btn-primary edit-btn" data-id="' + data[i].id + '">Edit</button> <button class="btn btn-sm btn-danger delete-btn" data-id="' + data[i].id + '">Delete</button></td>';
+                                tabData += '</tr>';
+                            }
+                            $('#tabData').html(tabData);
+                            var pagination = response.pagination;
+                            $('#prevPage').prop('disabled', page <= 1);
+                            $('#nxtPage').prop('disabled', page >= pagination.total_pages);
+                            currentPage = page;
                         }
+                    },
+                    error: function () {
+                        showNotification("An error occurred while fetching data", "error");
                     }
                 });
+            }
+            loadData(currentPage);
+
+            $(document).on('click', '.page-number', function () {
+                var page = $(this).data('page');
+                loadData(page);
             });
-        });  
+
+            $('#nxtPage').click(function () {
+                loadData(currentPage + 1);
+            });
+
+            $('#prevPage').click(function () {
+                if (currentPage > 1) {
+                    loadData(currentPage - 1);
+                }
+            });
+
+
+        });
+  
   $(document).ready(function () {
       loadData();
 
