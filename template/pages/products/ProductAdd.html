@@ -213,6 +213,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
     <script>
+        
         function loadCategory() {
             $.ajax({
                 type: "GET",
@@ -221,19 +222,17 @@
                     if (response.status == "success") {
                         var data = response.data;
                         var catData = '';
-
                         for (var i = 0; i < data.length; i++) {
                             catData += '<option value="' + data[i].id + '">' + data[i].name + '</option>';
-
                         }
                         $('#category').html(catData);
                     } else {
                         console.log(response.data);
                     }
-
                 }
             });
         }
+
         $(document).ready(function () {
             loadCategory();
 
@@ -329,21 +328,13 @@
         });
       </script>
 
-
     <script src="../../vendors/js/vendor.bundle.base.js"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
     <script src="../../vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
     <script src="../../js/off-canvas.js"></script>
     <script src="../../js/hoverable-collapse.js"></script>
     <script src="../../js/template.js"></script>
     <script src="../../js/settings.js"></script>
     <script src="../../js/todolist.js"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!-- End custom js for this page-->
 </body>
 
 </html>
