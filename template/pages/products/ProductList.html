@@ -266,6 +266,7 @@
           if (response.status == "success") {
             var data = response.data;
             var catData = '';
+            catData+='<option value="0">Select Category</option>'
             for (var i = 0; i < data.length; i++) {
               catData += '<option value="' + data[i].id + '">' + data[i].name + '</option>';
             }
@@ -451,12 +452,13 @@
         var productName = $(this).closest('tr').find('td:nth-child(2)').text();
         var productDescription = $(this).closest('tr').find('td:nth-child(4)').text();
         var productCategory = $(this).closest('tr').find('td:nth-child(6)').text();
+        console.log(productCategory)
         var productAffiliate = $(this).closest('tr').find('td:nth-child(7)').text();
 
         $('#inputName').val(productName);
         // $('#inputDescription').val(productDescription);
         tinymce.get('inputDescription').setContent(productDescription);
-        $('#inputCategory').val(productCategory);
+        $('#category').val(productCategory);
         $('#inputAffiliate').val(productAffiliate);
         $('#myModalEdit').modal('show');
 
@@ -464,15 +466,9 @@
           var editedProductName = $('#inputName').val();
           // var editedDescription = $('#inputDescription').val();
           var editedDescription = tinymce.get('inputDescription').getContent();
-          var editedCategory = $('#inputCategory').val();
+          var editedCategory = $('#category').val();
           var editedAffiliate = $('#inputAffiliate').val();
           var formData = new FormData($('#myModalEdit')[0]);
-
-          // formData.append('product_id', procuctId);
-          // formData.set('name', editedProductName);
-          // formData.set('description', editedDescription);
-          // formData.set('category', editedCategory);
-          // formData.set('affiliate_url', editedAffiliate);
 
           formData.append('product_id', procuctId);
           formData.append('name', editedProductName);
